@@ -1,18 +1,18 @@
 // Creo l array di bici sotto forma di oggetti
 const bikes = [
-  { nome: 'Bianchi', peso: 8 },
-  { nome: 'Trek', peso: 7 },
-  { nome: 'Specialized', peso: 6 },
-  { nome: 'Cannondale', peso: 9 },
+    { nome: 'Bianchi', peso: 8 },
+    { nome: 'Trek', peso: 7 },
+    { nome: 'Specialized', peso: 6 },
+    { nome: 'Cannondale', peso: 9 },
 ];
 
 // le scorro per trovare la meno pesante
 let lightestBike = bikes[0];
 for (let i = 1; i < bikes.length; i++) {
-  const { peso } = bikes[i];
-  if (peso < lightestBike.peso) {
-    lightestBike = bikes[i];
-  }
+    const { peso } = bikes[i];
+    if (peso < lightestBike.peso) {
+        lightestBike = bikes[i];
+    }
 }
 
 // stampo la bici con template
@@ -30,21 +30,47 @@ const squadre = [
     { nome: 'Milan', puntiFatti: 0, falliSubiti: 0 },
     { nome: 'Inter', puntiFatti: 0, falliSubiti: 0 },
     { nome: 'Roma', puntiFatti: 0, falliSubiti: 0 },
-  ];
-  
-  // Genero i numeri
-  for (let i = 0; i < squadre.length; i++) {
+];
+
+// Genero i numeri
+for (let i = 0; i < squadre.length; i++) {
     squadre[i].puntiFatti = Math.floor(Math.random() * 100) + 1;
     squadre[i].falliSubiti = Math.floor(Math.random() * 50) + 1;
-  }
-  
-  // Creo un nuovo array 
-  const squadreFalliSubiti = [];
-  for (let i = 0; i < squadre.length; i++) {
+}
+
+// Creo un nuovo array 
+const squadreFalliSubiti = [];
+for (let i = 0; i < squadre.length; i++) {
     const { nome, falliSubiti } = squadre[i];
     squadreFalliSubiti.push({ nome, falliSubiti });
-  }
-  
-  // Stampo tutto in console
-  console.log('Squadre:', squadre);
-  console.log('Squadre con falli subiti:', squadreFalliSubiti);
+}
+
+// Stampo tutto in console
+console.log('Squadre:', squadre);
+console.log('Squadre con falli subiti:', squadreFalliSubiti);
+
+
+
+// SNACK BONUS ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+// Creo un array
+const myArray = ["a", "b", "c", "d", "e", "f", "g"];
+
+// Uso la funzione per filtrare
+const filteredArray = filterArray(myArray, 2, 5);
+
+
+// Funzione per filtrare 
+function filterArray(arr, a, b) {
+    if (a > b) {
+        return [];
+    }
+
+    const filteredArray = arr.filter((element, index) => {
+        return index >= a && index <= b;
+    });
+
+    return filteredArray;
+}
+
+console.log(filteredArray); 
